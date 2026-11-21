@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Resource centre</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .row {
+        display: flex;
+        gap: 30px;
+      }
+      .column {
+        flex: 1 1 200px;
+        width: auto;
+        min-width: 0;
+      }
+      .column img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+      .tab-content section {
+        margin: 10px 0;
+      }
+      .tab-content section > h2 {
+        margin-bottom: 12px;
+      }
+      .column h3 {
+        margin: 8px 0 2px;
+      }
+      .column p {
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Resources</h1>
+      <p>Everything you need to organize, and attend successful events.</p>
+      <ul class="nav nav-tabs" id="resourceTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="venue-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#venue-booking"
+            type="button"
+            role="tab"
+            aria-controls="venue-booking"
+            aria-selected="true"
+          >
+            Venue Booking
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="rules-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#event-rules"
+            type="button"
+            role="tab"
+            aria-controls="event-rules"
+            aria-selected="false"
+          >
+            Event Rules
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="forms-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#downloadable-forms"
+            type="button"
+            role="tab"
+            aria-controls="downloadable-forms"
+            aria-selected="false"
+          >
+            Downloadable Forms
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="faqs-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#faqs"
+            type="button"
+            role="tab"
+            aria-controls="faqs"
+            aria-selected="false"
+          >
+            FAQs
+          </button>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <section
+          class="tab-pane fade show active"
+          id="venue-booking"
+          role="tabpanel"
+          aria-labelledby="venue-tab"
+          tabindex="0"
+        >
+          <h2>Venue Booking</h2>
+          <div class="row">
+            <div class="column">
+              <img src="images/auditorium.png" alt="University auditorium" width="250" height="180" />
+              <h3>Auditorium</h3>
+              <p>Large events and seminars</p>
+            </div>
+            <div class="column">
+              <img src="images/seminar_room.png" alt="University seminar room" width="250" height="180" />
+              <h3>Seminar Room</h3>
+              <p>Meetings and small sessions</p>
+            </div>
+            <div class="column">
+              <img src="images/campus_sapce.png" alt="University campus event space" width="250" height="180" />
+              <h3>Campus Space</h3>
+              <p>Outdoor and large events</p>
+            </div>
+          </div>
+        </section>
+        <section
+          class="tab-pane fade"
+          id="event-rules"
+          role="tabpanel"
+          aria-labelledby="rules-tab"
+          tabindex="0"
+        >
+          <h2>Event Rules</h2>
+          <p>
+            Failure to comply with these rules may result in the cancellation of
+            your event or loss of future booking privileges.
+          </p>
+          <h3>1. Booking & Scheduling</h3>
+          <ul>
+            <li>
+              <b>Advance Notice:</b> Submit requests at least 5 working days
+              prior to the event.
+            </li>
+            <li>
+              <b>Cancellations:</b> Notify the Events Office at least 48 hours
+              in advance.
+            </li>
+            <li><b>Time Limits:</b> All events must conclude by 10:00 PM.</li>
+          </ul>
+          <h3>2. Safety & Security</h3>
+          <ul>
+            <li>
+              <b>Capacity limit:</b> Attendees must not exceed the posted fire
+              code capacity.
+            </li>
+            <li>
+              <b>Emergency Exits:</b> Fire lanes and exits must remain clear at
+              all times.
+            </li>
+            <li>
+              <b>Prohibited Items:</b> No open flames,fireworks, or smoke
+              machines indoors.
+            </li>
+          </ul>
+          <h3>3. Venue Care</h3>
+          <ul>
+            <li>
+              <b>Cleanup:</b> Organizers must leave the venue clean and place
+              all trash in bins.
+            </li>
+            <li>
+              <b>Decorations:</b> No nails, screws, or strong adhesives on
+              walls. Use painter's tape only.
+            </li>
+            <li>
+              <b>Damages:</b> The organizing group is financially responsible
+              for any damages.
+            </li>
+          </ul>
+        </section>
+        <section
+          class="tab-pane fade"
+          id="downloadable-forms"
+          role="tabpanel"
+          aria-labelledby="forms-tab"
+          tabindex="0"
+        >
+          <h2>Downloadable Forms</h2>
+          <p>Please fill out, and submit these forms to the Event Office.</p>
+          <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Form Name</th>
+                <th>Description</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Venue Booking Request</td>
+                <td>Required for reserving any indoor or outdoor space.</td>
+                <td>
+                  <a href="forms/venue-booking-request.pdf" download
+                    >Download</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Event Risk Assessment</td>
+                <td>
+                  Required for events with 50+ attendees or physical activities.
+                </td>
+                <td>
+                  <a href="forms/event-risk-assessment.pdf" download
+                    >Download</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Catering Approval Form</td>
+                <td>Required if serving food or beverages at your event.</td>
+                <td>
+                  <a href="forms/catering-approval-form.pdf" download
+                    >Download</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Audio/Visual Equipment Request</td>
+                <td>Request microphones, projectors, or tech support.</td>
+                <td>
+                  <a href="forms/av-equipment-request.pdf" download>Download</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section
+          class="tab-pane fade"
+          id="faqs"
+          role="tabpanel"
+          aria-labelledby="faqs-tab"
+          tabindex="0"
+        >
+          <h2>FAQs</h2>
+          <details>
+            <summary>
+              <b>How long does it take to get a booking approved?</b>
+            </summary>
+            <p>
+              Approvals typically take 2-3 business days. Make sure you submit
+              your request at least 5 working days before your event to ensure
+              enough time for processing.
+            </p>
+          </details>
+          <details>
+            <summary>
+              <b> What happens if I need to cancel?</b>
+            </summary>
+            <p>
+              You must email the Events Office at least 48 hours before your
+              scheduled start time. Frequent last-minute cancellations may
+              result in your student organization losing booking privileges for
+              the semester.
+            </p>
+          </details>
+          <details>
+            <summary>
+              <b>Is tech support provided?</b>
+            </summary>
+            <p>
+              Basic tech support is provided for the Main Auditorium and Hall
+              B-204 if requested in advance. For other rooms, we recommend
+              testing your equipment beforehand or bringing your own portable
+              speakers/projectors.
+            </p>
+          </details>
+        </section>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="javaScript/script.js"></script>
+    </main>
+    <footer>
+      <h2>Campus Events Hub</h2>
+      <p>&copy; 2026 Campus Events Hub.</p>
+      <p>
+        All rights reserved. Unauthorized reproduction, distribution, or
+        modification of any content on this platform is strictly prohibited.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Contact Us</h1>
+      <p>Reach out with your event ideas, feedback, or questions.</p>
+      <div id="successMessage">
+        <h2>✅ Submission Successful!</h2>
+        <p>
+          Thank you for reaching out. Your message has been received, and we
+          will review it shortly.
+        </p>
+      </div>
+      <div class="main-wrapper">
+        <div class="form-container">
+          <form id="myForm" action="#" method="post" novalidate>
+            <table cellspacing="20">
+              <tr>
+                <td>
+                  <label for="name">Full Name</label><br />
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="field"
+                    required
+                  />
+                  <div class="error-text">This field is required.</div>
+                </td>
+                <td>
+                  <label for="email">Email</label><br />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="field"
+                    required
+                  />
+                  <div class="error-text">This field is required.</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="phone">Phone Number</label><br />
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="field"
+                    required
+                  />
+                  <div class="error-text">This field is required.</div>
+                </td>
+                <td>
+                  <label for="eventDate">Proposed Event Date</label><br />
+                  <input
+                    type="date"
+                    id="eventDate"
+                    name="eventDate"
+                    class="field"
+                    required
+                  /><br />
+                  <div class="error-text">This field is required.</div>
+                  <small
+                    >If this is a general feedback, please select today's
+                    date</small
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <label for="msg">Message / Special Requests</label><br />
+                  <textarea
+                    id="msg"
+                    name="msg"
+                    class="field"
+                    rows="5"
+                    placeholder="Tell us about your event ideas or provide your feedback..."
+                  ></textarea>
+                </td>
+              </tr>
+            </table>
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </div>
+        <div class="map-container">
+          <h2>Visit Us</h2>
+          <div class="contact-info">
+            <p><b>Event & Scheduling Office</b></p>
+            <p>
+              FAST-NUCES , A.K.B Road , H-11/4 <br />Islamabad, Pakistan
+              <br />📞 (051) 111-2345 | ✉️ events@isb.nu.edu.pk
+            </p>
+          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.0273862486897!2d73.01382951003572!3d33.65645227319732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbe1faaaaaaab%3A0x223386a2985e88f4!2sFAST%20NUCES%2C%20Islamabad%20Campus!5e0!3m2!1sen!2s!4v1794551633878!5m2!1sen!2s"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+      <script>
+        document
+          .getElementById("myForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name");
+            let email = document.getElementById("email");
+            let phone = document.getElementById("phone");
+            let eventDate = document.getElementById("eventDate");
+
+            let valid = true;
+            if (name.value.trim() == "") {
+              name.classList.add("error-border");
+              name.nextElementSibling.style.display = "block";
+              valid = false;
+            } else {
+              name.classList.remove("error-border");
+              name.nextElementSibling.style.display = "none";
+            }
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email.value)) {
+              email.classList.add("error-border");
+              email.nextElementSibling.style.display = "block";
+              email.nextElementSibling.innerHTML =
+                "Enter a valid email address.";
+              valid = false;
+            } else {
+              email.classList.remove("error-border");
+              email.nextElementSibling.style.display = "none";
+            }
+            if (phone.value.trim() == "") {
+              phone.classList.add("error-border");
+              phone.nextElementSibling.style.display = "block";
+              valid = false;
+            } else {
+              phone.classList.remove("error-border");
+              phone.nextElementSibling.style.display = "none";
+            }
+
+            let today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            let selectedDate = new Date(eventDate.value + "T00:00:00");
+
+            if (eventDate.value == "" || selectedDate <= today) {
+              eventDate.classList.add("error-border");
+              eventDate.nextElementSibling.nextElementSibling.style.display =
+                "block";
+              eventDate.nextElementSibling.nextElementSibling.innerHTML =
+                "Please select a future date.";
+              valid = false;
+            } else {
+              eventDate.classList.remove("error-border");
+              eventDate.nextElementSibling.nextElementSibling.style.display =
+                "none";
+            }
+
+            if (valid == true) {
+              document.getElementById("myForm").style.display = "none";
+              document.getElementById("successMessage").style.display = "block";
+            }
+          });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="javaScript/script.js"></script>
+    </main>
+    <footer>
+      <h2>Campus Events Hub</h2>
+      <p>&copy; 2026 Campus Events Hub.</p>
+      <p>
+        All rights reserved. Unauthorized reproduction, distribution, or
+        modification of any content on this platform is strictly prohibited.
+      </p>
+    </footer>
+  </body>
+</html>
